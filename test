@@ -1,0 +1,27 @@
+import random 
+
+def koala_game():
+  items = ['hat','sunnglasses','toy','wallet','watch','lucky pen','homework', 'phone']
+  while True:
+    items_sz = len(items)
+    user = input("Hi!  What's your name? ")
+    print(f"Oh no {user}, koala has just lost his")
+    missing_item = items[random.choice(range(items_sz))]
+    print(f'Missing_item: {missing_item}')
+    room = input(f"which room would you like to look in? (0 - {items_sz-1}) ")
+    room = int(room)
+    computer_choice = items[room]
+    print (f"In room number: {room} koala finds his {computer_choice}")
+    #conditional is not working properly
+    #it works
+    if missing_item == computer_choice:
+      print(f'You found koalas: {missing_item}')
+      print("Great job!  You did it!  You found koalas item!")
+      break
+    else:
+      print("Nice try, why not try again?")  
+  print('Game over, do you want to try again?')
+
+
+koala_game() 
+#fix "what is your name" everytime soemone plays
